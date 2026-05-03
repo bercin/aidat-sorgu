@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yenisayaca Köyü Derneği</title>
+
+<style>
+:root {
+  --bg: linear-gradient(180deg, #eef3f9, #f8fafc);
+  --glass: rgba(255,255,255,0.65);
+  --border: rgba(255,255,255,0.5);
+  --text: #111827;
+  --muted: #6b7280;
+
+  --danger: #dc2626;
+  --danger-bg: rgba(254,226,226,.9);
+
+  --success: #16a34a;
+  --success-bg: rgba(220,252,231,.9);
+
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 520px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ✅ CAM EFEKTLİ HEADER + LOGO */
+.header {
+  text-align: center;
+  margin: 50px 0 30px;
+  padding: 22px;
+  border-radius: 30px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.12),
+              inset 0 0 0 1px var(--border);
+  transition: all .35s ease;
+}
+
+.header.small {
+  margin-top: 12px;
+  padding: 14px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 95%;
+  border-radius: 50%
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.header.small h1 {
+  font-size: 18px;
+}
+
+/* SEARCH */
+.search-wrapper.center {
+  margin-top: 80px;
+}
+
+.search-box {
+  background: var(--glass);
+  border-radius: 28px;
+  padding: 16px 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08),
+              inset 0 0 0 1px var(--border);
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 17px;
+}
+
+/* ✅ KART + HOVER / PRESS ANİMASYONU */
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.1),
+              inset 0 0 0 1px var(--border);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.14);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.baba {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.borc {
+  font-size: 22px;
+  font-weight: 700;
+}
+.borc.red { color: var(--danger); }
+.borc.green { color: var(--success); }
+
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.year {
+  background: rgb(196, 204, 204,.1);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 15px;
+}
+
+/* ✅ iOS STİL İKONLU ETİKET */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 15px;
+  font-weight: 800;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+
+.badge.danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.badge.success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div id="header" class="header">
+    <div class="logo">
+      <!-- LOGO BURAYA -->
+      <img src="https://scontent-ist1-1.xx.fbcdn.net/v/t39.30808-6/656013208_1963626417567914_4534055305687266462_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=CP-hVaUpwVUQ7kNvwGV58Xm&_nc_oc=AdqVzQVRg2RdbLTzU0cuNvnL6EFED0v3vLgiPQN_p0Cz7-NwnWkrzL12Wvvqmf3oh6k&_nc_zt=23&_nc_ht=scontent-ist1-1.xx&_nc_gid=LKlCY1owr0E9TGQmsEjdZw&_nc_ss=7b2a8&oh=00_Af59Zz1Eqgys5QmdcQNqNnywKsPSSIlwz-T9zHWxEQsZlg&oe=69FD6653" alt="Logo">
+    </div>
+    <h2>Yenisayaca Köyü Derneği<br>Aidat Borç Listesi</h2>
+    <p>Aidat Ödenecek Hesap :<br>TR24 0015 7000 0000 0109 2857 06 <br>Nihat Berçin</p>
+  </div>
+
+  <div class="search-wrapper center">
+    <div class="search-box">
+      <input id="search" placeholder="Ad veya Soyad ile sorgulayın...">
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+</div>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbyX959k39p6P1r1sibuvm7eUTRNymqgNSKUBHbgM9qhyNGJuQyBdAcWQouwQqNBA-Ic/exec";
+let data = [];
+
+function toNumber(val) {
+  return Number(String(val).replace(/[^\d]/g, "")) || 0;
+}
+
+fetch(API_URL)
+  .then(r => r.json())
+  .then(j => data = j);
+
+const search = document.getElementById("search");
+const header = document.getElementById("header");
+
+search.addEventListener("input", e => {
+  const q = e.target.value.toLowerCase().trim();
+  const box = document.getElementById("results");
+
+  if (!q) {
+    header.classList.remove("small");
+    box.innerHTML = "";
+    return;
+  }
+
+  header.classList.add("small");
+
+  box.innerHTML = "";
+  data.filter(r =>
+    r.ADI.toLowerCase().includes(q) ||
+    r.SOYAD.toLowerCase().includes(q)
+  ).forEach(r => {
+    const borc = toNumber(r.BORÇ);
+    const hasDebt = borc > 0;
+
+    box.innerHTML += `
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="name">${r.ADI} ${r.SOYAD}</div>
+            <div class="baba">Baba Adı: ${r["BABA ADI"]}</div>
+            
+          </div>
+          <div class="borc ${hasDebt ? "red" : "green"}">
+            ${borc.toLocaleString("tr-TR")} ₺
+          </div>
+        </div>
+
+        <div class="years">
+        
+          <div class="year">2023: ${r["2023"]}</div>
+          <div class="year">2024: ${r["2024"]}</div>
+          <div class="year">2025: ${r["2025"]}</div>
+          <div class="year">2026: ${r["2026"]}</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="badge ${hasDebt ? "danger" : "success"}">
+            ${hasDebt ? "⚠️ Borç Var" : "✅ Borç Yok"}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+});
+</script>
+
+</body>
+</html>
